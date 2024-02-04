@@ -1,3 +1,0 @@
-name = "SVP House Secondary WAN link"
-type = "ping_check"
-ip_addr = "185.156.198.225"

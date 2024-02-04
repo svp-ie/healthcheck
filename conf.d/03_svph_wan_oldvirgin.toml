@@ -1,3 +1,0 @@
-name = "SVP House Old WAN link"
-type = "ping_check"
-ip_addr = "89.101.36.206"

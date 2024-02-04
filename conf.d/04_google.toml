@@ -1,3 +1,0 @@
-name = "Google DNS"
-type = "ping_check"
-ip_addr = "8.8.8.8"
