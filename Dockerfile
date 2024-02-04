@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 FROM python:3.12-alpine
-RUN apk add git
+RUN apk add git ping
 WORKDIR /app
 COPY ./requirements.txt /app
 RUN pip install -r requirements.txt
