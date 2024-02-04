@@ -1,0 +1,3 @@
+name = "SVP House Primary WAN link"
+type = "ping_check"
+ip_addr = "89.101.66.245"

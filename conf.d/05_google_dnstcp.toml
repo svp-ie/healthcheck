@@ -1,0 +1,5 @@
+name = "Google DNS TCP port"
+type = "tcpping_check"
+ip_addr = "8.8.8.8"
+port = 53
+timeout = 3
