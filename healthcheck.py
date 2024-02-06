@@ -13,6 +13,7 @@ def format_as_parameters(dictionary):
         param_string += (key + '=' + value + '&')
     return param_string[:-1]
     
+    
 def do_logincheck(healthcheck):
     headers={
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -30,6 +31,7 @@ def do_logincheck(healthcheck):
     else:
         return 'failed'
     
+    
 def do_pingcheck(healthcheck):
     param = '-n' if platform.system().lower() == 'windows' else '-c'
     command = ['ping', param, '1', healthcheck['ip_addr']]
@@ -38,6 +40,7 @@ def do_pingcheck(healthcheck):
         return 'success'
     else:
         return 'failed'
+    
 
 def do_tcppingcheck(healthcheck):
     timeout = healthcheck.get('timeout', 3) # get from config or set a default timeout value
@@ -50,12 +53,13 @@ def do_tcppingcheck(healthcheck):
     else:
         s.close()
         return 'success'
+    
  
 # initialise array of healthchecks
 healthchecks = []
 id = 0
 directory = "./conf.d"
-for filename in os.listdir(directory):
+for filename in sorted(os.listdir(directory)):
     with open(os.path.join(directory, filename), "rb") as f:
         data = tomllib.load(f)
         data['id'] = id
